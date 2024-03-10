@@ -1,0 +1,91 @@
+.statsContainer {
+    margin-top: 70px;
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 30%;
+}
+
+.cons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 70px;
+}
+
+.leftColumn {
+    display: flex;
+    align-items: flex-start;
+}
+
+.leftColumn h1{
+    font-size: 75px;
+    font-family: Swiss;
+    font-weight: 600;
+    margin: 0;
+}
+
+.leftColumn p {
+    font-size: 16px;
+    font-family: Swiss;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.rightColumn {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-family: Swiss;
+    width: 40%;
+    letter-spacing: 0.5px;
+}
+
+hr {
+    height: 1px;
+    background-color:rgba(85, 125, 76, 0.55);
+    width: 95%;
+}
+
+@media(min-width:768px) and (max-width:1024px) {
+    .cons {
+        padding: 0px 30px;
+    }
+    .leftColumn h1 {
+        font-size: 58px;
+    }
+    .leftColumn p {
+        font-size: 14px;
+    }
+    .rightColumn{
+        font-size: 14px;
+    }
+
+}
+
+@media(max-width:768px) {
+    .cons{
+        padding: 0px 15px;
+    }
+    .leftColumn h1 {
+        font-size: 38px;
+    }
+    .leftColumn p{
+        font-size: 10px;
+    }
+    .rightColumn {
+        font-size: 10px;
+    }
+}
+
+/*animation*/
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}

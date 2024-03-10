@@ -1,0 +1,199 @@
+@font-face {
+    font-family: Dm Sans;
+    src: url('../../font/DMSans_18pt-Regular.ttf');
+}
+
+@font-face {
+    font-family: Literata;
+    src: url('../../font/Literata_18pt-Regular.ttf');
+}
+
+@font-face {
+    font-family: Swiss;
+    src: url('../../font/swiss-721-3-cufonfonts/Swiss 721 Light.otf');
+}
+
+.container-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.container-navbar.scrolled {
+    background-color: white;
+}
+
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 70px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.logotuju {
+    width: 140px;
+    padding: 12px 0px;
+}
+
+.contactUs{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    font-family: Dm Sans;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
+
+.contactUs a{
+    text-decoration: none;
+    color: rgba(85, 125, 76, 0.55);
+}
+
+.contactUs::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom:-5px; /* Adjust to position the underline properly */
+    width: 0;
+    height: 1px; /* Adjust thickness of underline as needed */
+    background-color:  rgba(85, 125, 76, 0.55); /* Adjust underline color as needed */
+    transition: 0.3s ease; /* Only transition width */
+}
+
+.list {
+    display: flex;
+    width: 35vw;
+    justify-content: space-around;
+    color: rgba(85, 125, 76, 0.55);
+}
+
+  
+li:hover::after {
+    width: 100%; /* Expand the underline on hover */
+  }
+
+
+  /* Burger Menu */
+
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(85, 125, 76, 1);
+    margin: 5px;
+  }
+
+
+
+@media(min-width:768px) and (max-width:1024px) {
+    .navigation{
+        padding: 0px 40px;
+    }
+    .burger-menu {
+        display: block;
+        z-index: 100;
+    }
+    .list {
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 95.8%;
+        transition: height 0.5s ease;
+        height: 0;
+        overflow: hidden;
+    }
+    .bar {
+        width: 25px;
+        height: 4px;
+        margin: 4px;
+        transition: transform 0.3s;
+    }
+    .burger-menu.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0; /* Hide the middle bar */
+    }
+    .burger-menu.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    .list  li {
+        margin: 15px 25px;
+    }
+
+    .list.active {
+        display: flex;
+        opacity: 1;
+        height: 50vh;
+    }
+    li:hover::after {
+        width: 10%; /* Expand the underline on hover */
+      }
+    .contactUs::after {
+        bottom: 0px;
+      }
+
+}
+
+@media(max-width:768px) {
+    .navigation{
+        padding: 0px 20px;
+    }
+    .burger-menu {
+        display: block;
+        z-index: 100;
+    }
+    .list {
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        transition: height 0.5s ease;
+        height: 0;
+        overflow: hidden;
+    }
+    .bar {
+        width: 25px;
+        height: 2px;
+        margin: 4px;
+        transition: transform 0.3s;
+    }
+    .burger-menu.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 5px);
+    }
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0; /* Hide the middle bar */
+    }
+    .burger-menu.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(3px, -3px);
+    }
+    .list  li {
+        margin: 10px 18px;
+    }
+    .list.active {
+        display: flex;
+        opacity: 1;
+        height: 50vh;
+    }
+    li:hover::after {
+        width: 20%; /* Expand the underline on hover */
+      }
+    .contactUs::after {
+        bottom:-5px;
+      }
+
+}
+
